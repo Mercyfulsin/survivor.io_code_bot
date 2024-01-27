@@ -1,0 +1,5 @@
+{
+    "BOT_TOKEN":"<Bot-Token>",
+    "CLIENT_ID":"<Application-ID>",
+    "CLAN":"<Guild-ID>"
+}
