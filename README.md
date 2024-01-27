@@ -16,11 +16,13 @@ All you need to do is press a button or two and enter the captcha!
 
 ### /set-code
 A Slash command only available to Admins of the server. Whenever a new code is released, simply run the command and fill out the code form.
+
 ![setting-code](https://github.com/Mercyfulsin/survivor.io_code_bot/assets/16928058/81a90db2-9e31-4f3c-9335-bc1fc7141e83)
 
 ### /set-survivor-id
 A Slash command that anyone can use. Users should set their ID before attempting to use the bot to redeem codes.
 **Note:** Running the command again will override your previous entry.
+
 ![setting-id](https://github.com/Mercyfulsin/survivor.io_code_bot/assets/16928058/f021aed7-aa98-40c4-88eb-6610994bfe0c)
 
 ### /get-survivor-id
@@ -30,8 +32,10 @@ A Slash command so that you can verify that the stored ID is correct.
 
 ### After running /set-code
 After an admin adds a code, the bot will create a message with a button indicating what the current code is.
+
 ![image](https://github.com/Mercyfulsin/survivor.io_code_bot/assets/16928058/7ac7b761-c7ed-4f93-ac12-c1116efa89fd)
 
 Once a user clicks on the button and no errors occur (an ID exists for the discord user), a new ephemeral message will appear.
 This message contains the captchaCode that the user is required to solve and a button to submit the captcha code.
+
 ![image](https://github.com/Mercyfulsin/survivor.io_code_bot/assets/16928058/663d9ea8-37a5-4833-8841-6d6889418c31)
