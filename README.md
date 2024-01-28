@@ -12,6 +12,22 @@ Discord being what most Clans use to manage their members.
 This bot will allow you to store your User ID and automatically submit both UserID and Gift Code.
 All you need to do is press a button or two and enter the captcha!
 
+## Setup
+
+1. Download the repo, go into the the directory and install requirements
+```npm install```
+
+2. Modify `config.json` with your Bot's Token, Client ID and your Server ID
+
+3. Invite your bot to your discord server
+
+4. Initiate DB and Assign Commands
+```
+1. node syncdb.js
+2. node deploy-commands.js 
+```
+
+
 ## Commands
 
 ### /set-code
