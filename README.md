@@ -55,3 +55,7 @@ Once a user clicks on the button and no errors occur (an ID exists for the disco
 This message contains the captchaCode that the user is required to solve and a button to submit the captcha code.
 
 ![image](https://github.com/Mercyfulsin/survivor.io_code_bot/assets/16928058/663d9ea8-37a5-4833-8841-6d6889418c31)
+
+## User Perspective
+
+![survivor-io_code_bot](https://github.com/Mercyfulsin/survivor.io_code_bot/assets/16928058/6fceacba-669b-440a-9c21-7937e3bbb7f7)
