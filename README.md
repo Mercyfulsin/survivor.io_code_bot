@@ -1,4 +1,5 @@
 # Discord Bot for Survivor.io Gift Code Redemption
+**Note:** You can run this on your computer, server, vps, or host it on some service. This is not a bot you can just add to your discord.
 
 Survivor.io requires you to visit their [website](https://gift.survivorio.com/) to redeem codes.
 You will need to go into your game, copy youd User ID, come back to the website and paste your ID in.
