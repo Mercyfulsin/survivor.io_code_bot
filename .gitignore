@@ -1,6 +1,6 @@
 # DB
 database.sqlite
-
+DB-Backup*
 # Logs
 logs
 *.log

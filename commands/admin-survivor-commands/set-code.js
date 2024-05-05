@@ -13,7 +13,7 @@ module.exports = {
 				.setRequired(true),
 		),
 	async execute(interaction) {
-		if (interaction.member.permissions.has(PermissionFlagsBits.Administrator)) {
+		if (interaction.member.permissions.has(PermissionFlagsBits.MuteMembers)) {
 			const code_input = await interaction.options.getString('code');
 			const [codeTable] = await CodeTable.findOrCreate({
 				where: { code: code_input },

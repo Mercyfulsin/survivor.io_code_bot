@@ -14,7 +14,7 @@ module.exports = {
 		const code = interaction.message.content.slice(17);
 		if (!survivorId) {
 			interaction.reply(
-				'No ID could be found. Please use /set-survivor-id !',
+				`${interaction.user.tag} Please use /set-survivor-id !`,
 			);
 		}
 		else {
