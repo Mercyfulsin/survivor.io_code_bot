@@ -33,6 +33,10 @@ All you need to do is press a button or two and enter the captcha!
 
 5. Edit `commands/admin-survivor-commands/auto-claim.js` Line #23 and #24 to either replicate allowing any admin to use it, such as `commands/admin-survivor-commands/set-code.js` or just update it to include your own ID if you don't want multiple people having access to a command that can cost you $$$.
 
+6. Run the bot!
+```
+1. node .
+```
 
 ## Commands
 
