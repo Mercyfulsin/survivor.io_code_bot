@@ -1,6 +1,9 @@
 # DB
 database.sqlite
 DB-Backup*
+commands/admin-survivor-commands/give-role.js.ONETIME
+config.json
+
 # Logs
 logs
 *.log
