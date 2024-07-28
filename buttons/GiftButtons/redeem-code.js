@@ -1,6 +1,6 @@
 const { EmbedBuilder, ButtonBuilder, ActionRowBuilder } = require('discord.js');
 const SurvivorId = require('../../database/models/survivorId');
-
+const { CODE_ROLE } = require('../../config.json');
 
 module.exports = {
 	data: {
@@ -16,9 +16,9 @@ module.exports = {
 			where: { id: discord_id },
 		});
 		const code = interaction.message.content.slice(17);
-		if (!survivorId || !roles.includes('1256812819517538324')) {
+		if (!survivorId || !roles.includes(CODE_ROLE)) {
 			interaction.reply({
-				content:`${interaction.user.tag} Favor de usar \`/set-survivor-id\` para obtener el rol de Codigos!\n https://discord.com/channels/1142660290698293278/1196706887706607688/1196711571955658765`
+				content:`${interaction.user.tag}, please use \`/set-survivor-id\` to obtain the role requried to redeem codes.`
 			});
 		}
 		else {
