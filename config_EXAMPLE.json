@@ -1,0 +1,7 @@
+{
+    "BOT_TOKEN":"<Bot-Token>",
+    "CLIENT_ID":"<Application-ID>",
+    "GUILD_ID":"<Guild-ID>",
+    "CODE_ROLE":"<Code-Role-ID>",
+    "ACCESS_TOKEN":"<BestCaptchaSolver-API-Token>"
+}

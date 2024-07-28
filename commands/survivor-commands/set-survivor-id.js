@@ -1,5 +1,6 @@
 const { SlashCommandBuilder } = require('discord.js');
 const SurvivorId = require('../../database/models/survivorId');
+const { CODE_ROLE } = require('../../config.json');
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -17,6 +18,7 @@ module.exports = {
 
 		const [ survivorId, created ] = await SurvivorId.findOrCreate({ where: { id: interaction.member.id } });
 		await survivorId.update({ survivorId: id });
-		await interaction.reply(`User ${discord_id} has assigned Survivor ID: ${id}`);
+		await interaction.member.roles.add(CODE_ROLE);
+		await interaction.reply(`User ${discord_id} has assigned Survivor ID: ${id} and role given!`);
 	},
 };

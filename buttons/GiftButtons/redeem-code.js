@@ -7,15 +7,19 @@ module.exports = {
 		name: 'redeem-code',
 	},
 	async execute(interaction) {
+		// Get the user's roles
+		const user = interaction.user;
 		const discord_id = interaction.member.id;
+		let roles = await interaction.guild.members.cache.get(user.id).roles.cache.keys();
+		roles = Array.from(roles);
 		const survivorId = await SurvivorId.findOne({
 			where: { id: discord_id },
 		});
 		const code = interaction.message.content.slice(17);
-		if (!survivorId) {
-			interaction.reply(
-				`${interaction.user.tag} Please use /set-survivor-id !`,
-			);
+		if (!survivorId || !roles.includes('1256812819517538324')) {
+			interaction.reply({
+				content:`${interaction.user.tag} Favor de usar \`/set-survivor-id\` para obtener el rol de Codigos!\n https://discord.com/channels/1142660290698293278/1196706887706607688/1196711571955658765`
+			});
 		}
 		else {
 			/* #region Fetch Captcha Creation */
@@ -27,9 +31,9 @@ module.exports = {
 						headers: {
 							accept: 'application/json, text/plain, */*',
 							'accept-language':
-			'en-US,en;q=0.9,es-US;q=0.8,es;q=0.7,uk;q=0.6',
+								'en-US,en;q=0.9,es-US;q=0.8,es;q=0.7,uk;q=0.6',
 							'sec-ch-ua':
-			'"Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"',
+								'"Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"',
 							'sec-ch-ua-mobile': '?0',
 							'sec-ch-ua-platform': '"Windows"',
 							'sec-fetch-dest': 'empty',
@@ -45,8 +49,8 @@ module.exports = {
 				const data = await captcha.json();
 				await survivorId.update({ latestCaptcha: data.data.captchaId });
 				captchaURL =
-	  'https://mail.survivorio.com/api/v1/captcha/image/' +
-	  data.data.captchaId;
+					'https://mail.survivorio.com/api/v1/captcha/image/' +
+					data.data.captchaId;
 			}
 			catch (error) {
 				await interaction.reply('Oops, error detected');
