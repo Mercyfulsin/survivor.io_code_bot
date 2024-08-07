@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, PermissionFlagsBits, ModalBuilder, TextInputBuilder, ButtonBuilder, TextInputStyle, InteractionType, ActionRowBuilder } = require('discord.js');
+const { SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
 const SurvivorId = require('../../database/models/survivorId');
 
 module.exports = {
@@ -11,8 +11,7 @@ module.exports = {
 			const memberIds = members.map(member => member.id);
 			const records = await SurvivorId.findAll();
 			const orphanedRecords = records.filter(record => !memberIds.includes(record.id));
-			const prunedDiscordID = orphanedRecords.map(record => record.id);
-			const prunedSurvivorID = orphanedRecords.map(record => record.survivorId);
+
 			for (const orphanedRecord of orphanedRecords) {
 				await orphanedRecord.destroy();
 				console.log(`Destroyed ${orphanedRecord.id} with Survivor ID ${orphanedRecord.survivorId}`);
