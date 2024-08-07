@@ -61,5 +61,29 @@ for (const file of eventFiles) {
 	}
 }
 
+// Error handling for the client
+client.on('error', (error) => {
+    console.error('The client encountered an error:', error);
+});
+
+client.on('shardError', (error) => {
+    console.error('A websocket connection encountered an error:', error);
+});
+
+// Handle WebSocket errors
+client.on('disconnect', (event) => {
+    console.warn('The client disconnected from the WebSocket. Reconnecting...', event);
+});
+
+client.on('reconnecting', () => {
+    console.log('The client is attempting to reconnect to the WebSocket...');
+});
+
+client.on('resume', (replayedEvents) => {
+    console.log(`The client has resumed and replayed ${replayedEvents} events.`);
+});
+
 // Log in to Discord with your client's token
-client.login(BOT_TOKEN);
+client.login(BOT_TOKEN).catch((error) => {
+    console.error('Failed to login:', error);
+});
